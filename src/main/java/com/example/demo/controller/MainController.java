@@ -29,7 +29,7 @@ public class MainController {
     }
 
     @GetMapping(path = "/{characterID}")
-    @ApiOperation(value = "Lista todos os personagens")
+    @ApiOperation(value = "Busca um personagem pelo id")
     public ResponseEntity<CharacterDataWrapper> listCharacterById(
             @PathVariable Long characterID
     ) {
@@ -38,7 +38,7 @@ public class MainController {
     }
 
     @GetMapping(path = "/{characterID}/comics")
-    @ApiOperation(value = "Busca personagem por ID")
+    @ApiOperation(value = "Busca as revistas de um personagem")
     public ResponseEntity<String> listCharacterComics(
             @PathVariable Long characterID
     ) {
@@ -46,7 +46,7 @@ public class MainController {
                 .body("Still in development");
     }
     @GetMapping(path = "/{characterID}/events")
-    @ApiOperation(value = "Lista todos os eventos de um personagens")
+    @ApiOperation(value = "Lista todos os eventos de um personagem")
     public ResponseEntity<String> listCharacterEvents(
             @PathVariable Long characterID
     ) {
@@ -54,7 +54,7 @@ public class MainController {
                 .body("Still in development");
     }
     @GetMapping(path = "/{characterID}/series")
-    @ApiOperation(value = "Lista todas as speries de um personagens")
+    @ApiOperation(value = "Lista todas as speries de um personagem")
     public ResponseEntity<String> listCharacterSeries(
             @PathVariable Long characterID
     ) {
@@ -62,7 +62,7 @@ public class MainController {
                 .body("Still in development");
     }
     @GetMapping(path = "/{characterID}/stories")
-    @ApiOperation(value = "Lista todas as historias de um personagens")
+    @ApiOperation(value = "Lista todas as historias de um personagem")
     public ResponseEntity<String> listCharacterStories(
             @PathVariable Long characterID
     ) {

@@ -51,7 +51,7 @@ public class FillDbWithJson {
 
         String msg = "Dados do json inserido no banco!";
 
-        if(this.listTypeRepository.count() > 0) {
+        if(this.characteresRepository.count() > 0) {
             msg = "Dados do json já inseridos no banco, para adicionar mais, atualize o json, e apague TODAS as tabelas do banco!";
         }else{
             fillDatabase();
@@ -68,7 +68,7 @@ public class FillDbWithJson {
         final ListType event_type = this.listTypeService.findByName("events");
 
         try {
-            String strings = Files.readAllLines(Paths.get("/home/desenvolvedor/Desktop/458583/mais/teste/Marvel-API/src/test/java/com/example/demo/data.json")).stream().map(String::valueOf).collect(Collectors.joining());
+            String strings = Files.readAllLines(Paths.get("src/main/java/com/example/demo/data.json")).stream().map(String::valueOf).collect(Collectors.joining());
 
             CharacterDataWrapper json_data = new ObjectMapper()
                     .readValue(strings, CharacterDataWrapper.class);
